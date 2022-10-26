@@ -22,56 +22,19 @@ body {
   z-index: 0;
 }
 
-.container {
-  width: 1170px;
-  margin: 0 auto;
-  padding: 0 15px;
-}
+/* +
++
++
++
++
+####### PORTFOLIO ######
++
++
++
++
++ */
 
-.h-f-content {
-  display: flex;
-  /* width: 1200px; */
-}
-
-.style-head {
-  display: flex;
-  border-bottom: 1px solid #ececec;
-  justify-content: center;
-}
-.style-head .address {
-  display: flex;
-}
-.style-head a {
-  cursor: pointer;
-}
-.style-head .logo {
-  height: 31px;
-  margin-top: 24px;
-}
-.style-head .navigation,
-.style-head .list-style {
-  display: flex;
-  padding: 32px 0;
-  align-items: center;
-}
-.style-head .list-style li:first-child {
-  margin-right: 30px;
-}
-
-.style-head svg {
-  fill: #757575;
-  padding-top: 0px;
-}
-
-.style-head .list-style li svg {
-  align-self: center;
-  margin-right: 10px;
-}
-
-.style-head .icon {
-  width: 16px;
-  height: 16px;
-}
+/* ========== BUTTONS ======== */
 .buttons {
   margin-bottom: 50px;
   text-align: center;
@@ -101,67 +64,153 @@ body {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.logo {
-  font-family: "Raleway";
+/* ========== LIST PORTFOLIO ========== */
+
+.list-portfolio {
+  background-color: #ffffff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 30px;
+  position: relative;
+  z-index: 4;
+}
+.list-portfolio li {
+  cursor: pointer;
+}
+.list-portfolio li:hover,
+.list-portfolio li:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.list-portfolio figure {
+  background: #ffffff;
+  border: 1px solid #eeeeee;
+  margin: 0;
+  position: relative;
+  z-index: 4;
+}
+
+.list-portfolio figcaption {
+  margin: 0;
+  padding: 20px 24px;
+  background-color: #ffffff;
+  width: 370px;
+  height: 110px;
+  background-color: #ffffff;
+  position: relative;
+  z-index: 5;
+}
+.list-portfolio h3 {
   font-weight: 700;
-  font-size: 26px;
-  line-height: 1.19;
-  text-decoration: none;
-  color: #2196f3;
-  width: 145px;
+  font-size: 18px;
+  line-height: 2;
+  margin: 0 0 4px 0;
+}
+.list-portfolio p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.87;
+  color: #757575;
+  margin: 0;
+}
+/* =========== ANIMACJA Portfolio ======== */
+.overlay {
+  width: 370px;
+  height: 294px;
+  background-color: rgba(33, 150, 243, 0.9);
+  position: absolute;
+  top: 300px;
+  opacity: 0;
+  z-index: -1;
+}
+
+.overlay p {
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0.03em;
+  text-align: left;
+  padding: 49px 45px 49px 24px;
+}
+
+.list-portfolio figure:hover .overlay {
+  animation: hoverOverlay 250ms cubic-bezier(0.4, 0, 0.2, 1) normal both;
+}
+
+@keyframes hoverOverlay {
+  0% {
+    transform: translateY(0px);
+    z-index: -1;
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(-300px);
+    z-index: 2;
+    opacity: 1;
+  }
+}
+
+/* +
++
++
++
++
+###### INDEX ######
++
++
++
++
++ */
+
+/* =================== HEADER ================== */
+
+.style-head {
+  display: flex;
+  border-bottom: 1px solid #ececec;
+  justify-content: center;
+}
+.style-head .address {
+  display: flex;
+}
+.style-head a {
+  cursor: pointer;
+}
+.style-head .logo {
+  height: 31px;
+  margin-top: 24px;
+}
+.style-head .navigation,
+.style-head .list-style {
+  display: flex;
+  padding: 32px 0;
+  align-items: center;
+}
+.style-head .list-style li:first-child {
+  margin-right: 30px;
+}
+.style-head svg {
+  fill: #757575;
+  padding-top: 0px;
+}
+.style-head .list-style li svg {
+  align-self: center;
+  margin-right: 10px;
+}
+.style-head .icon {
+  width: 16px;
+  height: 16px;
 }
 .logo .c-h-studio {
   color: #000000;
-}
-.logo .c-f-studio {
-  color: #ffffff;
-}
-.address {
-  text-decoration: none;
-  color: #757575;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
-}
-.footer {
-  display: flex;
-  background-color: #2f303a;
-  color: #ffffff;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.71;
-  letter-spacing: 0.03em;
-  width: 100%;
-  justify-content: center;
-  text-align: left;
-  padding: 60px 0px;
-}
-.footer .logo {
-  margin-bottom: 20px;
-}
-.footer [href^="mailto"],
-.footer [href^="tel"] {
-  color: rgba(255, 255, 255, 0.6);
-}
-.footer li {
-  font-style: normal;
-  list-style-type: none;
-}
-.footer li:not(:last-child) {
-  margin-bottom: 9px;
-}
-.footer h4 {
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 16px;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  margin-top: 12px;
-}
-
-.footer .list-style {
-  margin-right: 70px;
 }
 
 .address:hover,
@@ -235,6 +284,9 @@ body {
   position: absolute;
   bottom: -1px;
 }
+
+/* =============== SECTION-1 ================ */
+
 .section-1 {
   background-image: linear-gradient(
       rgba(47, 48, 58, 0.4),
@@ -276,6 +328,8 @@ body {
   margin-bottom: 200px;
   cursor: pointer;
 }
+
+/* ============== SECTION 2 ============= */
 
 .list-1 {
   display: flex;
@@ -350,6 +404,8 @@ body {
   bottom: 0;
 }
 
+/* ==================== SECTION 3 ================ */
+
 .background-s3 {
   background-color: #f5f4fa;
 }
@@ -410,6 +466,84 @@ body {
   fill: #ffffff;
   transition: all 0.2s;
 }
+
+/* ================= SECTION 4 ================= */
+
+.section-4 {
+  text-align: center;
+}
+
+.section-4 h2 {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.section-4 svg {
+  fill: #afb1b8;
+  border-radius: 4px;
+  outline: 1px solid #afb1b8;
+}
+.section-4 svg:hover,
+.section-4 svg:focus {
+  outline: 1px solid #2196f3;
+  transition: all 0.2s;
+}
+.section-4 ul {
+  display: flex;
+  padding-left: 0;
+}
+.section-4 li:not(:last-child) {
+  margin-right: 30px;
+}
+
+/* ================== FOOTER =============== */
+
+.logo .c-f-studio {
+  color: #ffffff;
+}
+.footer {
+  display: flex;
+  background-color: #2f303a;
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  width: 100%;
+  justify-content: center;
+  text-align: left;
+  padding: 60px 0px;
+}
+.footer .logo {
+  margin-bottom: 20px;
+}
+.footer [href^="mailto"],
+.footer [href^="tel"] {
+  color: rgba(255, 255, 255, 0.6);
+}
+.footer li {
+  font-style: normal;
+  list-style-type: none;
+}
+.footer li:not(:last-child) {
+  margin-bottom: 9px;
+}
+.footer h4 {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  margin-top: 12px;
+}
+
+.footer .list-style {
+  margin-right: 70px;
+}
+
 .footer .icon-social svg {
   background-color: rgba(255, 255, 255, 0.1);
   fill: #ffffff;
@@ -445,40 +579,6 @@ body {
 .list-style .icon-social li:not(:last-child) {
   margin-right: 10px;
 }
-.section-4 {
-  text-align: center;
-}
-
-.section-4 h2 {
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.17;
-  text-align: center;
-  margin-bottom: 50px;
-}
-.section-4 svg {
-  fill: #afb1b8;
-  border-radius: 4px;
-  outline: 1px solid #afb1b8;
-}
-.section-4 svg:hover,
-.section-4 svg:focus {
-  outline: 1px solid #2196f3;
-  transition: all 0.2s;
-}
-.section-4 ul {
-  display: flex;
-  padding-left: 0;
-}
-.section-4 li:not(:last-child) {
-  margin-right: 30px;
-}
-.icon {
-  text-decoration: none;
-  border-style: none;
-  background-color: #ffffff;
-  cursor: pointer;
-}
 
 .icon svg:hover,
 .icon svg:focus {
@@ -487,113 +587,6 @@ body {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-.list-portfolio {
-  background-color: #ffffff;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  row-gap: 30px;
-  position: relative;
-  z-index: 4;
-}
-.list-portfolio li {
-  cursor: pointer;
-}
-.list-portfolio li:hover,
-.list-portfolio li:focus {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
-  transition-property: box-shadow;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-.list-portfolio figure {
-  background: #ffffff;
-  border: 1px solid #eeeeee;
-  margin: 0;
-  position: relative;
-  z-index: 4;
-}
-
-.list-portfolio figcaption {
-  margin: 0;
-  padding: 20px 24px;
-  background-color: #ffffff;
-  width: 370px;
-  height: 110px;
-  background-color: #ffffff;
-  position: relative;
-  z-index: 5;
-}
-.list-portfolio h3 {
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 2;
-  margin: 0 0 4px 0;
-}
-.list-portfolio p {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.87;
-  color: #757575;
-  margin: 0;
-}
-
-.overlay {
-  width: 370px;
-  height: 294px;
-  background-color: rgba(33, 150, 243, 0.9);
-  position: absolute;
-  top: 300px;
-  opacity: 0;
-  z-index: -1;
-}
-
-.overlay p {
-  color: #ffffff;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 28px;
-  letter-spacing: 0.03em;
-  text-align: left;
-  padding: 49px 45px 49px 24px;
-}
-
-.list-portfolio figure:hover .overlay {
-  animation: hoverOverlay 250ms cubic-bezier(0.4, 0, 0.2, 1) normal both;
-}
-
-@keyframes hoverOverlay {
-  0% {
-    transform: translateY(0px);
-    z-index: -1;
-    opacity: 0;
-  }
-  25% {
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateY(-300px);
-    z-index: 2;
-    opacity: 1;
-  }
-}
-
-.list-style {
-  list-style-type: none;
-  /* align-items: center; */
-}
-
-.section-style {
-  padding: 94px 0;
-}
-
-.section-style {
-  padding: 94px 0;
-}
-
 .newsletter input {
   width: 358px;
   height: 50px;
@@ -636,6 +629,48 @@ body {
   background-color: #2196f3;
   width: 48px;
   height: 30px;
+}
+
+/* ============== Klasy pomocnicze ============ */
+
+.container {
+  width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.h-f-content {
+  display: flex;
+}
+.logo {
+  font-family: "Raleway";
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.19;
+  text-decoration: none;
+  color: #2196f3;
+  width: 145px;
+}
+.list-style {
+  list-style-type: none;
+  /* align-items: center; */
+}
+
+.section-style {
+  padding: 94px 0;
+}
+.address {
+  text-decoration: none;
+  color: #757575;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+}
+.icon {
+  text-decoration: none;
+  border-style: none;
+  background-color: #ffffff;
+  cursor: pointer;
 }
 
 /* ============ Okno Modalne ============ */
