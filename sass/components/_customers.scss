@@ -1,0 +1,27 @@
+.section-4 {
+  text-align: center;
+}
+
+.section-4__title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.section-4__svg {
+  fill: #afb1b8;
+  border-radius: 4px;
+  outline: 1px solid #afb1b8;
+}
+.section-4__svg:hover,
+.section-4__svg:focus {
+  outline: 1px solid #2196f3;
+  fill: #2196f3;
+  transition: all 0.2s;
+}
+.section-4__list {
+  display: flex;
+  padding-left: 0;
+  justify-content: space-between;
+}
